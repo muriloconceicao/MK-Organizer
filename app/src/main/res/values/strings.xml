@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MK Organizer</string>
+    <string name="actMainTxtBrand">Brand</string>
+    <string name="actMainTxtModel">Model</string>
+    <string name="actMainTxtSwitch">Switch(es)</string>
+    <string name="actMainBtnAdd">Add</string>
+    <string name="actMainBtnReset">Reset</string>
+    <string name="actMainBtnList">List</string>
+</resources>
