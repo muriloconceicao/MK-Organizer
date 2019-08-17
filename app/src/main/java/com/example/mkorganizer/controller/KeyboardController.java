@@ -10,5 +10,6 @@ public class KeyboardController {
     public void addKeyboard(Keyboard keyboard) {
         KeyboardDatabase keyboardDatabase = Room.databaseBuilder(AppContext.getContext(), KeyboardDatabase.class, "keyboarddb").allowMainThreadQueries().build();
         keyboardDatabase.keyboardDao().addKeyboard(keyboard);
+        keyboardDatabase.close();
     }
 }
