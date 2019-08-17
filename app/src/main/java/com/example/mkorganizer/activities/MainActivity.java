@@ -1,10 +1,14 @@
-package com.example.mkorganizer;
+package com.example.mkorganizer.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.example.mkorganizer.controller.KeyboardController;
+
+import com.example.mkorganizer.R;
+import com.example.mkorganizer.controllers.KeyboardController;
 import com.example.mkorganizer.entity.Keyboard;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         keyboardController = new KeyboardController();
         keyboardController.addKeyboard(keyboard);
-//        MainActivity.keyboardDatabase.keyboardDao().addKeyboard(keyboard);
         Toast.makeText(getApplicationContext(), "Keyboard has been added.", Toast.LENGTH_SHORT).show();
 
         resetTextFields();
@@ -56,11 +59,15 @@ public class MainActivity extends AppCompatActivity {
         edtBrand.requestFocus();
     }
 
+    @OnClick(R.id.btnList)
+    public void onBtnListClick() {
+        startActivity(new Intent(MainActivity.this, KeyboardListActivity.class));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-//        keyboardDatabase = Room.databaseBuilder(getApplicationContext(), KeyboardDatabase.class, "keyboarddb").allowMainThreadQueries().build();
     }
 }

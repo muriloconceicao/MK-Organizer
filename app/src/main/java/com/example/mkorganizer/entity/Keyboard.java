@@ -8,7 +8,7 @@ public class Keyboard {
 
     // Table of database
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     private String brand;
