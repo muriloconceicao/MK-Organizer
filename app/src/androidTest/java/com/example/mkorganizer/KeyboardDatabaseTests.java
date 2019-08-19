@@ -16,8 +16,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import java.util.List;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import androidx.test.rule.ActivityTestRule;
 
@@ -73,6 +76,9 @@ public class KeyboardDatabaseTests {
 
     @Test
     public void editTextsTest() {
+        onView(withId(R.id.edtBrand)).check(matches(isDisplayed()));
+        onView(withId(R.id.edtModel)).check(matches(isDisplayed()));
+        onView(withId(R.id.edtSwitch)).check(matches(isDisplayed()));
         onView(withId(R.id.edtBrand)).perform(typeText("Ducky"), closeSoftKeyboard());
         onView(withId(R.id.edtModel)).perform(typeText("Mini"), closeSoftKeyboard());
         onView(withId(R.id.edtSwitch)).perform(typeText("Brown"), closeSoftKeyboard());
