@@ -1,6 +1,8 @@
 package com.example.mkorganizer.controllers;
 
 import androidx.room.Room;
+import androidx.room.RoomDatabase;
+
 import com.example.mkorganizer.database.KeyboardDatabase;
 import com.example.mkorganizer.entity.Keyboard;
 import com.example.mkorganizer.utils.AppContext;
@@ -12,12 +14,20 @@ public class KeyboardController {
 
     public void addKeyboard(Keyboard keyboard) {
         keyboardDatabase =  Room.databaseBuilder(AppContext.getContext(), KeyboardDatabase.class, "keyboarddb").allowMainThreadQueries().build();
-        keyboardDatabase.keyboardDao().addKeyboard(keyboard);
+        keyboardDatabase.keyboardDao().insertKeyboard(keyboard);
         keyboardDatabase.close();
     }
 
     public List<Keyboard> getKeyboardList() {
         keyboardDatabase = Room.databaseBuilder(AppContext.getContext(), KeyboardDatabase.class, "keyboarddb").allowMainThreadQueries().build();
-        return keyboardDatabase.keyboardDao().getKeyboards();
+        List<Keyboard> keyboardList = keyboardDatabase.keyboardDao().getKeyboards();
+        keyboardDatabase.close();
+        return keyboardList;
+    }
+
+    public void deleteKeyboard(Keyboard keyboard) {
+        keyboardDatabase = Room.databaseBuilder(AppContext.getContext(), KeyboardDatabase.class, "keyboarddb").allowMainThreadQueries().build();
+        keyboardDatabase.keyboardDao().deleteKeyboard(keyboard);
+        keyboardDatabase.close();
     }
 }

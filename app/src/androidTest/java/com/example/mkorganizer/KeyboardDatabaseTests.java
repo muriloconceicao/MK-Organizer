@@ -25,6 +25,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import androidx.test.rule.ActivityTestRule;
 
 
+import javax.annotation.Nullable;
 
 import static org.junit.Assert.*;
 
@@ -54,24 +55,33 @@ public class KeyboardDatabaseTests {
     }
 
     @Test
-    public void writeKeyboardAndReadBrandTest() {
-        keyboardDao.addKeyboard(keyboard);
+    public void KeyboardReadBrandTest() {
+        keyboardDao.insertKeyboard(keyboard);
         List<Keyboard> keyboardList = keyboardDao.getKeyboards();
         assertEquals(keyboardList.get(0).getBrand(), keyboard.getBrand());
     }
 
     @Test
-    public void writeKeyboardAndReadModelTest() {
-        keyboardDao.addKeyboard(keyboard);
+    public void KeyboardReadModelTest() {
+        keyboardDao.insertKeyboard(keyboard);
         List<Keyboard> keyboardList = keyboardDao.getKeyboards();
         assertEquals(keyboardList.get(0).getModel(), keyboard.getModel());
     }
 
     @Test
-    public void writeKeyboardAndReadSwitchesTest() {
-        keyboardDao.addKeyboard(keyboard);
+    public void KeyboardReadSwitchesTest() {
+        keyboardDao.insertKeyboard(keyboard);
         List<Keyboard> keyboardList = keyboardDao.getKeyboards();
         assertEquals(keyboardList.get(0).getSwitches(), keyboard.getSwitches());
+    }
+
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void KeyboardDeleteTest() {
+        keyboardDao.insertKeyboard(keyboard);
+        List<Keyboard> keyboardList = keyboardDao.getKeyboards();
+        keyboardDao.deleteKeyboard(keyboardList.get(0));
+        keyboardList = keyboardDao.getKeyboards();
+        assertNull(keyboardList.get(0));
     }
 
     @Test

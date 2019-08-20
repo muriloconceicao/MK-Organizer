@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mkorganizer.R;
+import com.example.mkorganizer.controllers.KeyboardController;
 import com.example.mkorganizer.entity.Keyboard;
 import com.example.mkorganizer.utils.AppContext;
 
@@ -37,8 +38,11 @@ public class KeyboardAdapter extends RecyclerView.Adapter<KeyboardAdapter.ViewHo
         holder.modelRow.setText(keyboardList.get(position).getModel());
         holder.switchesRow.setText(keyboardList.get(position).getSwitches());
 
+        KeyboardController keyboardController = new KeyboardController();
+        keyboardController.deleteKeyboard(keyboardList.get(position));
+
         holder.keyboardrow.setOnLongClickListener(view -> {
-            Toast.makeText(AppContext.getContext(), keyboardList.get(position).getBrand(), Toast.LENGTH_LONG).show();
+            Toast.makeText(AppContext.getContext(), keyboardList.get(position).getModel() + " Deleted.", Toast.LENGTH_LONG).show();
             return true;
         });
 
