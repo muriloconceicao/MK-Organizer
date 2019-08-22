@@ -6,16 +6,19 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.KeyboardDetailsActivity"
-    tools:showIn="@layout/keyboard_details">
+    tools:showIn="@layout/keyboard_details"
+    android:paddingStart="8dp"
+    android:paddingEnd="0dp">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInputBrand"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:hint="@string/actKeyboardDetailsTxtBrand"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:hint="@string/actKeyboardDetailsTxtBrand">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtBrand"
@@ -28,11 +31,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInputModel"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:layout_constraintTop_toBottomOf="@id/txtInputBrand"
-        android:hint="@string/actKeyboardDetailsTxtModel">
+        android:hint="@string/actKeyboardDetailsTxtModel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtInputBrand">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtModel"
@@ -45,11 +50,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInputSwitches"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:layout_constraintTop_toBottomOf="@id/txtInputModel"
-        android:hint="@string/actKeyboardDetailsTxtSwitch">
+        android:hint="@string/actKeyboardDetailsTxtSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtInputModel">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtSwitch"
@@ -65,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/actKeyboardDetailsBtnAdd"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="@+id/txtInputSwitches"
         app:layout_constraintTop_toBottomOf="@id/txtInputSwitches"/>
 
@@ -74,6 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/actKeyboardDetailsBtnReset"
+        app:cornerRadius="0dp"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
         app:layout_constraintStart_toEndOf="@+id/btnAdd"
