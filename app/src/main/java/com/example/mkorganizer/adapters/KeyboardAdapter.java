@@ -5,19 +5,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mkorganizer.R;
-import com.example.mkorganizer.controllers.KeyboardController;
 import com.example.mkorganizer.entity.Keyboard;
-import com.example.mkorganizer.utils.AppContext;
-
 import java.util.List;
 
 public class KeyboardAdapter extends RecyclerView.Adapter<KeyboardAdapter.ViewHolder> {
-
     private List<Keyboard> keyboardList;
 
     public KeyboardAdapter(List<Keyboard> keyboardList) {
@@ -33,18 +27,9 @@ public class KeyboardAdapter extends RecyclerView.Adapter<KeyboardAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         holder.brandRow.setText(keyboardList.get(position).getBrand());
         holder.modelRow.setText(keyboardList.get(position).getModel());
         holder.switchesRow.setText(keyboardList.get(position).getSwitches());
-
-        KeyboardController keyboardController = new KeyboardController();
-        keyboardController.deleteKeyboard(keyboardList.get(position));
-
-        holder.keyboardrow.setOnLongClickListener(view -> {
-            Toast.makeText(AppContext.getContext(), keyboardList.get(position).getModel() + " Deleted.", Toast.LENGTH_LONG).show();
-            return true;
-        });
 
     }
 
@@ -54,7 +39,6 @@ public class KeyboardAdapter extends RecyclerView.Adapter<KeyboardAdapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         LinearLayout keyboardrow;
         TextView brandRow;
         TextView modelRow;

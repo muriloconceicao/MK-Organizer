@@ -1,9 +1,16 @@
 <resources>
+    <!-- Normal strings -->
     <string name="app_name">MK Organizer</string>
-    <string name="actMainTxtBrand">Brand</string>
-    <string name="actMainTxtModel">Model</string>
-    <string name="actMainTxtSwitch">Switch(es)</string>
-    <string name="actMainBtnAdd">Add</string>
-    <string name="actMainBtnReset">Reset</string>
-    <string name="actMainBtnList">List</string>
+    <string name="actKeyboardDetailsTxtBrand">Brand</string>
+    <string name="actKeyboardDetailsTxtModel">Model</string>
+    <string name="actKeyboardDetailsTxtSwitch">Switch(es)</string>
+    <string name="actKeyboardDetailsBtnAdd">Add</string>
+    <string name="actKeyboardDetailsBtnReset">Reset</string>
+
+    <!-- Success Strings -->
+    <string name="insertKeyboardSuccess">Keyboard added!</string>
+
+    <!-- Errors strings -->
+    <string name="insertKeyboardFillAllFIeldsError">Please, fill all the fields.</string>
+
 </resources>

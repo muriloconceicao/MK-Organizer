@@ -5,13 +5,13 @@
     android:paddingStart="8dp"
     android:paddingEnd="0dp"
     android:id="@+id/keyboardrow">
-    
+
     <TextView
         android:id="@+id/brandRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/modelRow"
