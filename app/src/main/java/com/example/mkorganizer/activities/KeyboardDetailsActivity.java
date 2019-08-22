@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class KeyboardDetailsActivity extends AppCompatActivity {
-    KeyboardController keyboardController;
+    private KeyboardController keyboardController;
 
     // Components
     @BindView(R.id.edtBrand) EditText edtBrand;

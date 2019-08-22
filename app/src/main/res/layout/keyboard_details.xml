@@ -9,7 +9,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:contentDescription="@string/actKeyboardDetailsAccessibilityAdicionandoTeclado">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarKeyboardDetails"
@@ -17,7 +18,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:navigationIcon="@drawable/baseline_arrow_back_white_18"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:contentDescription="@string/actKeyboardDetailsAccessibilityBack"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

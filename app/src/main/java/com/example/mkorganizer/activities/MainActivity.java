@@ -3,6 +3,9 @@ package com.example.mkorganizer.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
+
 import com.example.mkorganizer.adapters.KeyboardAdapter;
 import com.example.mkorganizer.controllers.KeyboardController;
 import com.example.mkorganizer.entity.Keyboard;
@@ -16,13 +19,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView.Adapter adapter;
-    List<Keyboard> keyboardList;
-    KeyboardController keyboardController;
+    private RecyclerView.Adapter adapter;
+    private List<Keyboard> keyboardList;
+    private KeyboardController keyboardController;
 
     // Components
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.keyboardRecycleView) RecyclerView keyboardRecycleView;
+    @BindView(R.id.frameNoKeyboards) FrameLayout frameNoKeyboards;
 
     // Components Actions
     @OnClick(R.id.fabInserKeyboard)
@@ -47,8 +51,14 @@ public class MainActivity extends AppCompatActivity {
         getKeyboards();
     }
 
-    public void getKeyboards() {
+    private void getKeyboards() {
         keyboardList = keyboardController.getKeyboardList();
+        if(keyboardList.size() == 0) {
+            frameNoKeyboards.setVisibility(View.VISIBLE);
+            return;
+        } else {
+            frameNoKeyboards.setVisibility(View.GONE);
+        }
         adapter = new KeyboardAdapter(keyboardList);
         keyboardRecycleView.setAdapter(adapter);
     }

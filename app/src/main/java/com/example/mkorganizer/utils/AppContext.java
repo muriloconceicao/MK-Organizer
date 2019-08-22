@@ -7,7 +7,7 @@ public class AppContext extends Application {
 
     private static Application sApplication;
 
-    public static Application getApplication() {
+    private static Application getApplication() {
         return sApplication;
     }
 

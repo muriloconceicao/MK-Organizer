@@ -1,6 +1,6 @@
 <resources>
     <!-- Normal strings -->
-    <string name="app_name">MK Organizer</string>
+    <string name="app_name">Keycaps</string>
     <string name="actKeyboardDetailsTxtBrand">Brand</string>
     <string name="actKeyboardDetailsTxtModel">Model</string>
     <string name="actKeyboardDetailsTxtSwitch">Switch(es)</string>
@@ -11,6 +11,11 @@
     <string name="insertKeyboardSuccess">Keyboard added!</string>
 
     <!-- Errors strings -->
-    <string name="insertKeyboardFillAllFIeldsError">Please, fill all the fields.</string>
+    <string name="insertKeyboardFillAllFIeldsError">Please, inform all the fields.</string>
+    <string name="actMainNoKeyboardsYet">You don\'t have any keyboards yet.</string>
+    <string name="actMainAccessibilityFabAddKeyboard">Add Keyboard</string>
+    <string name="actMainAccessibilityKeyboardList">Keyboard List</string>
+    <string name="actKeyboardDetailsAccessibilityAdicionandoTeclado">Adding a Keyboard</string>
+    <string name="actKeyboardDetailsAccessibilityBack">Go Back</string>
 
 </resources>

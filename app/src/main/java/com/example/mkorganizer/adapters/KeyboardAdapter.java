@@ -12,7 +12,7 @@ import com.example.mkorganizer.entity.Keyboard;
 import java.util.List;
 
 public class KeyboardAdapter extends RecyclerView.Adapter<KeyboardAdapter.ViewHolder> {
-    private List<Keyboard> keyboardList;
+    private final List<Keyboard> keyboardList;
 
     public KeyboardAdapter(List<Keyboard> keyboardList) {
         this.keyboardList = keyboardList;
@@ -39,10 +39,10 @@ public class KeyboardAdapter extends RecyclerView.Adapter<KeyboardAdapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout keyboardrow;
-        TextView brandRow;
-        TextView modelRow;
-        TextView switchesRow;
+        final LinearLayout keyboardrow;
+        final TextView brandRow;
+        final TextView modelRow;
+        final TextView switchesRow;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);

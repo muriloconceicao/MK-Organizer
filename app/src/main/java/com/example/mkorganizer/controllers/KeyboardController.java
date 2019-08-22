@@ -1,7 +1,6 @@
 package com.example.mkorganizer.controllers;
 
 import androidx.room.Room;
-import androidx.room.RoomDatabase;
 
 import com.example.mkorganizer.database.KeyboardDatabase;
 import com.example.mkorganizer.entity.Keyboard;
